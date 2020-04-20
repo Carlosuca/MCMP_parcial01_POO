@@ -1,5 +1,7 @@
 package com.CMPP.x00202118;
 
+import java.util.ArrayList;
+
 public class CalculadoraImpuestos extends Empleado {
     private double totalRenta;
     private double totalISSS;
@@ -7,13 +9,27 @@ public class CalculadoraImpuestos extends Empleado {
 
     public CalculadoraImpuestos(String nombre, String puesto,String docu, double salario) {
         super(nombre, puesto,docu, salario);
+
     }
 
-    public double calcularPago(String Empeado){
-        return calcularPago(Empeado);
+    public CalculadoraImpuestos() {
+        super();
     }
-    public String mostrarTotales(){
-        return mostrarTotales();
+
+    public double calcularPago(Empleado Emp){
+        double total = 0;
+        totalRenta = Emp.getSalario() * 0.10;
+        totalISSS = Emp.getSalario() * 0.075;
+        totalAFP = Emp.getSalario() * 0.072;
+        total = Emp.getSalario() - totalISSS - totalRenta - totalAFP;
+        return total;
+    }
+    public String mostrarTotales(ArrayList empleado, Empleado Emp){
+        totalRenta = Emp.getSalario() * 0.10;
+        totalISSS = Emp.getSalario() * 0.075;
+        totalAFP = Emp.getSalario() * 0.072;
+        String totales = "Renta = $" + totalRenta + " ISSS =  $" + totalISSS + " AFP = $" + totalAFP;
+        return totales;
 
     }
 }

@@ -21,6 +21,10 @@ public class Empleado {
         this.docu = docu;
     }
 
+    public Empleado() {
+
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -52,10 +56,10 @@ public class Empleado {
     @Override
     public String toString() {
         return "Empleado{" +
-                "nombre='" + nombre + '\'' +
-                ", puesto='" + puesto + '\'' +
-                ", documento=" + docu +
-                ", salario=" + salario +
+                "Nombre=' " + nombre + '\'' +
+                ", Puesto=' " + puesto + '\'' +
+                ", Documento= " + docu +
+                ", Salario= $" + salario +
                 '}';
     }
 }
